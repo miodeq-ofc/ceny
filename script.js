@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             data.items.forEach(item => {
                 const listItem = document.createElement('li');
-                listItem.textContent = `${item.productName}: ${item.price.toFixed(2)} zł x ${item.quantity} = ${(item.price * item.quantity).toFixed(2)} zł`;
+                listItem.textContent = `${item.productName || 'Brak Nazwy'}: ${item.price.toFixed(2)} zł x ${item.quantity} = ${(item.price * item.quantity).toFixed(2)} zł`;
                 priceList.appendChild(listItem);
             });
         }
@@ -42,15 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
     priceForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const productName = document.getElementById('productName').value;
+        const productName = document.getElementById('productName').value.trim() || 'Brak Nazwy';
         const price = parseFloat(document.getElementById('price').value);
-        const quantity = parseInt(document.getElementById('quantity').value, 10);
+        const quantity = document.getElementById('quantity').value.trim();
+        const quantityNumber = quantity === '' ? 1 : parseInt(quantity, 10); // Domyślnie 1, jeśli nie podano
 
-        const total = price * quantity;
+        if (isNaN(price) || isNaN(quantityNumber)) {
+            alert('Wprowadź poprawne wartości dla ceny i ilości.');
+            return;
+        }
+
+        const total = price * quantityNumber;
         totalCost += total;
 
         const listItem = document.createElement('li');
-        listItem.textContent = `${productName}: ${price.toFixed(2)} zł x ${quantity} = ${total.toFixed(2)} zł`;
+        listItem.textContent = `${productName}: ${price.toFixed(2)} zł x ${quantityNumber} = ${total.toFixed(2)} zł`;
         priceList.appendChild(listItem);
 
         totalCostElem.textContent = totalCost.toFixed(2);
