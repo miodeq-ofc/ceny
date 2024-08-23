@@ -71,6 +71,7 @@ input[type="tel"] {
     background-color: #333;
     color: #e0e0e0;
     font-size: 1.2rem; /* Większy rozmiar czcionki */
+
 }
 
 button {
@@ -102,6 +103,27 @@ ul#priceList li {
     border-radius: 5px;
     margin-bottom: 15px; /* Większa przerwa między elementami */
     color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul#priceList li .item-text {
+    flex: 1;
+}
+
+ul#priceList li .remove-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+ul#priceList li .remove-button:hover {
+    background-color: #c82333;
 }
 
 /* Styl dla przycisku wyczyszczenia danych */
@@ -146,4 +168,31 @@ ul#priceList li {
         padding: 10px 15px;
         font-size: 1rem;
     }
+}
+
+
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent !important;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 15px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #99aaad;
+  }
+
+* :not(body, .bg, .navbar, .nav-container, .hamburger-lines,.logo)
+{
+  overflow: hidden;
 }
