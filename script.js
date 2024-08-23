@@ -44,11 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const productName = document.getElementById('productName').value.trim() || 'Brak Nazwy';
         const price = parseFloat(document.getElementById('price').value);
-        const quantity = document.getElementById('quantity').value.trim();
-        const quantityNumber = quantity === '' ? 1 : parseInt(quantity, 10); // Domyślnie 1, jeśli nie podano
+        let quantity = document.getElementById('quantity').value.trim();
+
+        // Używamy 1 jako domyślnej wartości, jeśli pole ilości jest puste
+        const quantityNumber = quantity === '' ? 1 : parseInt(quantity, 10);
 
         if (isNaN(price) || isNaN(quantityNumber)) {
-            alert('Wprowadź poprawne wartości dla ceny i ilości.');
+            alert('Wprowadź poprawne wartości dla ceny.');
             return;
         }
 
