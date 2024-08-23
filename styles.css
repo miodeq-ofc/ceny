@@ -1,0 +1,133 @@
+/* Resetowanie stylów domyślnych */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Globalne style */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Nagłówek */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Formularz */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Wygląd listy cen */
+#priceList {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+#priceList li {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#priceList li:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Stylizacja dla całkowitego kosztu */
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Przycisk do dodawania ceny */
+button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Przyciski */
+#clearData {
+    background-color: #dc3545;
+}
+
+#clearData:hover {
+    background-color: #c82333;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #priceList {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    form input[type="text"],
+    form input[type="number"] {
+        font-size: 14px;
+    }
+
+    #priceList li {
+        font-size: 14px;
+    }
+}

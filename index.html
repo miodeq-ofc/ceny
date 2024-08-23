@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="3;url=https://forms.gle/FMbijM99dV7aqhs86">
-  <title>Redirecting...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skener Cen</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<script>
-function function1() 
-{
-    window.location.href = "https://forms.gle/FMbijM99dV7aqhs86";
-}
-</script>
-<style>
-    *
-    {
-        font-size: 110%;
-        font-family: arial;
-    }
-    body
-    {
-      background-color: rgb(19, 19, 19);
-      color: white;
-    }
-</style>
-<body onload="function1()">
-  <p>Redirecting to menu...</p>
-  <p>Manual redirecting: <a href="https://forms.gle/FMbijM99dV7aqhs86">DRIVE</a></p>
+<body>
+    <h1>Skener Cen</h1>
+
+    <form id="priceForm">
+        <label for="productName">Nazwa produktu:</label>
+        <input type="text" id="productName" required>
+
+        <label for="price">Cena (w zł):</label>
+        <input type="text" id="price" required>
+
+        <label for="quantity">Ilość:</label>
+        <input type="number" id="quantity" min="1" required>
+        
+        <button type="submit">Dodaj cenę</button>
+    </form>
+
+    <ul id="priceList"></ul>
+
+    <h3>Razem: <span id="totalCost">0.00</span> zł</h3>
+
+    <button id="clearData">Wyczyść wszystkie dane</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
