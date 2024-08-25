@@ -196,3 +196,20 @@ ul#priceList li .remove-button:hover {
 {
   overflow: hidden;
 }
+
+
+p a 
+{
+    text-decoration: none;
+    color: white;
+   
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    
+
+    &:hover
+    {
+        color: gray;
+    }
+}
